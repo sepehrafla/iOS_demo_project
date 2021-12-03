@@ -64,6 +64,10 @@ class LoginViewController: UIViewController {
     @objc func loginButtonPressed(){
         if userNameField.text == "Admin" && userPasswordField.text == "123"{
             loginViewModel.login()
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Username or Password is invalid", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Try again!", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
