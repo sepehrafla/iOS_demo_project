@@ -7,10 +7,12 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class LoginViewController: UIViewController {
     
     private let loginViewModel: LoginViewModel
+    let disposeBag = DisposeBag()
     
     init (loginViewModel: LoginViewModel){
         self.loginViewModel = loginViewModel
@@ -65,6 +67,44 @@ class LoginViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Try again!", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func createViewModelBinding(){
+            
+        userNameField.rx.text.orEmpty
+            .bind(to: loginViewModel.emailIdViewModel.data)
+            .disposed(by: disposeBag)
+        
+        userPasswordField.rx.text.orEmpty
+            .bind(to: loginViewModel.passwordViewModel.data)
+            .disposed(by: disposeBag)
+        
+        loginButton.rx.tap.do(onNext:  { [unowned self] in
+            self.userNameField.resignFirstResponder()
+            self.userPasswordField.resignFirstResponder()
+        }).subscribe(onNext: { [unowned self] in
+            if self.loginViewModel.validateCredentials() {
+                self.loginViewModel.loginUser()
+            }
+        }).disposed(by: disposeBag)
+
+    }
+        
+    func createCallbacks (){
+        
+        // success
+        loginViewModel.isSuccess.asObservable()
+            .bind{ value in
+                NSLog("Successfull")
+            }.disposed(by: disposeBag)
+        
+        // errors
+        loginViewModel.errorMsg.asObservable()
+            .bind { errorMessage in
+                // Show error
+                NSLog("Failure")
+            }.disposed(by: disposeBag)
+
     }
     
     func setupview() {

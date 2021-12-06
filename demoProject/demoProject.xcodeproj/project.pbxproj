@@ -21,6 +21,7 @@
 		BEF1132F275D9C5800944AE5 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1132E275D9C5800944AE5 /* LoginModel.swift */; };
 		BEF11331275DA54B00944AE5 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11330275DA54B00944AE5 /* PasswordViewModel.swift */; };
 		BEF11333275DA55700944AE5 /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11332275DA55700944AE5 /* EmailViewModel.swift */; };
+		BEF11335275E6EC500944AE5 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11334275E6EC500944AE5 /* ItemViewModel.swift */; };
 		D82C119CBC715622D78DC6ED /* Pods_demoProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B9271D143390C610C4BD9F /* Pods_demoProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		BEF1132E275D9C5800944AE5 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		BEF11330275DA54B00944AE5 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		BEF11332275DA55700944AE5 /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
+		BEF11334275E6EC500944AE5 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				BEF113192759B6C500944AE5 /* LoginViewModel.swift */,
 				BEF11330275DA54B00944AE5 /* PasswordViewModel.swift */,
 				BEF11332275DA55700944AE5 /* EmailViewModel.swift */,
+				BEF11334275E6EC500944AE5 /* ItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF11335275E6EC500944AE5 /* ItemViewModel.swift in Sources */,
 				BEF1131A2759B6C500944AE5 /* LoginViewModel.swift in Sources */,
 				BEF1130A27593C3200944AE5 /* LoginViewController.swift in Sources */,
 				BEF1131F2759BE4800944AE5 /* Chocolate.swift in Sources */,
