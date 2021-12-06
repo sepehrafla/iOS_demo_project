@@ -6,27 +6,29 @@
 //
 
 import Foundation
+import UIKit
 struct Chocolate: Equatable, Hashable {
   let priceInDollars: Float
   let countryName: String
-  let countryFlagEmoji: String
+  let countryFlagEmoji: UIImage
   
   // An array of chocolate from europe
   static let ofEurope: [Chocolate] = {
     let belgian = Chocolate(priceInDollars: 8,
-                            countryName: "Belgium",
-                            countryFlagEmoji: "🇧🇪")
+                            countryName: "Buggati",
+                            countryFlagEmoji: UIImage(named: "bugatti")!)
     let british = Chocolate(priceInDollars: 7,
-                            countryName: "Great Britain",
-                            countryFlagEmoji: "🇬🇧")
+                            countryName: "Tesla",
+                            countryFlagEmoji: UIImage(named: "tesla")!)
     let dutch = Chocolate(priceInDollars: 8,
-                          countryName: "The Netherlands",
-                          countryFlagEmoji: "🇳🇱")
+                          countryName: "McLaren",
+                          countryFlagEmoji: UIImage(named: "mclaren")!)
     let german = Chocolate(priceInDollars: 7,
-                           countryName: "Germany", countryFlagEmoji: "🇩🇪")
+                           countryName: "Lamborghini",
+                           countryFlagEmoji: UIImage(named: "lambo")!)
     let swiss = Chocolate(priceInDollars: 10,
-                          countryName: "Switzerland",
-                          countryFlagEmoji: "🇨🇭")
+                          countryName: "Ferrari",
+                          countryFlagEmoji: UIImage(named: "ferrari")!)
     
     return [belgian,
             british,

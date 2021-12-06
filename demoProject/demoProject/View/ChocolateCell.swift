@@ -8,7 +8,7 @@
 import UIKit
 
 class ChocolateCell: UITableViewCell {
-    var chocolateImageView = UILabel()
+    var chocolateImageView = UIImageView()
     var chocolateTitle = UILabel()
     var chocolatePrice = UILabel()
     
@@ -19,11 +19,13 @@ class ChocolateCell: UITableViewCell {
     
     func setupview () {
         addSubview(chocolateImageView)
-        chocolateImageView.numberOfLines = 0
-        chocolateImageView.adjustsFontSizeToFitWidth = true
+        chocolateImageView.layer.cornerRadius = 10
+        chocolateImageView.clipsToBounds = true
         chocolateImageView.snp.makeConstraints{make in
             make.top.equalTo(safeAreaLayoutGuide).offset(5)
             make.leading.equalTo(safeAreaLayoutGuide).offset(5)
+            make.height.lessThanOrEqualTo(60)
+            make.width.lessThanOrEqualTo(90)
         }
         
         addSubview(chocolateTitle)
@@ -47,7 +49,7 @@ class ChocolateCell: UITableViewCell {
     }
     
     func set (chocolate: Chocolate){
-        chocolateImageView.text = chocolate.countryFlagEmoji
+        chocolateImageView.image = chocolate.countryFlagEmoji
         chocolateTitle.text = chocolate.countryName
         chocolatePrice.text = chocolate.priceInDollars.description
     }

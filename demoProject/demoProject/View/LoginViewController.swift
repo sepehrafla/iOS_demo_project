@@ -12,29 +12,34 @@ class LoginViewController: UIViewController {
     
     private let loginViewModel: LoginViewModel
     
-    private lazy var titleLable: UILabel = {
+    init (loginViewModel: LoginViewModel){
+        self.loginViewModel = loginViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    lazy var titleLable: UILabel = {
         let label = UILabel()
         label.text = "Login Page"
         label.font = .boldSystemFont(ofSize: 50)
         label.textAlignment = .center
         return label
     }()
-    
-    private lazy var userNameField : UITextField = {
+    lazy var userNameField : UITextField = {
         let text = UITextField()
         text.placeholder = "Username"
         text.borderStyle = .none
         return text
     }()
-    
-    private lazy var userPasswordField : UITextField = {
+    lazy var userPasswordField : UITextField = {
         let text = UITextField()
         text.placeholder = "Password"
         text.borderStyle = .none
         return text
     }()
-    
-    private lazy var loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
         button.backgroundColor = .lightGray
@@ -43,15 +48,6 @@ class LoginViewController: UIViewController {
         button.clipsToBounds = true
         return button
     }()
-    
-    init (loginViewModel: LoginViewModel){
-        self.loginViewModel = loginViewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,22 +69,22 @@ class LoginViewController: UIViewController {
     
     func setupview() {
         view.addSubview(titleLable)
+        view.addSubview(userNameField)
+        view.addSubview(userPasswordField)
+        view.addSubview(loginButton)
         titleLable.snp.makeConstraints{make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(50)
             make.centerX.equalToSuperview()
         }
-        view.addSubview(userNameField)
         userNameField.snp.makeConstraints{make in
             make.top.equalTo(titleLable.snp.bottom).offset(50)
             make.left.right.equalToSuperview().inset(30)
         }
-        view.addSubview(userPasswordField)
         userPasswordField.snp.makeConstraints{make in
             make.top.equalTo(userNameField.snp.bottom).offset(20)
             make.left.right.equalTo(userNameField)
             make.height.equalTo(40)
         }
-        view.addSubview(loginButton)
         loginButton.snp.makeConstraints{make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-70)
             make.left.right.equalToSuperview().inset(50)

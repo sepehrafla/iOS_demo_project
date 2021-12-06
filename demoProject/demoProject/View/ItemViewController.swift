@@ -16,9 +16,8 @@ class ItemViewController : UIViewController{
     
     private lazy var titleLable: UILabel = {
         let label = UILabel()
-        label.text = "Chocolate"
-        label.backgroundColor = .brown
-        label.textColor = .white
+        label.text = "Cars"
+        label.textColor = .red
         label.font = .boldSystemFont(ofSize: 24)
         label.textAlignment = .center
         return label

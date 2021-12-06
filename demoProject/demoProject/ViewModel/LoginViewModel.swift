@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 
 final class LoginViewModel {
+    let model : LoginModel = LoginModel()
+    let disposebag = DisposeBag()
+    
     weak var coordinator: LoginCoordinator?
     func login() {
         coordinator?.navigateToItemScreen()
