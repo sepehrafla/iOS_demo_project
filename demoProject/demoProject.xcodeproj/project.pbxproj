@@ -24,6 +24,7 @@
 		BEF11335275E6EC500944AE5 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11334275E6EC500944AE5 /* ItemViewModel.swift */; };
 		BEF11337275FBAAE00944AE5 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11336275FBAAE00944AE5 /* ShoppingCartViewController.swift */; };
 		D82C119CBC715622D78DC6ED /* Pods_demoProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B9271D143390C610C4BD9F /* Pods_demoProject.framework */; };
+		DDC2C2D62762BA920018B567 /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2C2D52762BA920018B567 /* SegueHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		BEF11332275DA55700944AE5 /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		BEF11334275E6EC500944AE5 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		BEF11336275FBAAE00944AE5 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		DDC2C2D52762BA920018B567 /* SegueHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		BEF1130427593C3200944AE5 /* demoProject */ = {
 			isa = PBXGroup;
 			children = (
+				DDC2C2D42762BA790018B567 /* protocol */,
 				BEF1130527593C3200944AE5 /* AppDelegate.swift */,
 				BEF1130727593C3200944AE5 /* SceneDelegate.swift */,
 				BEF1130E27593C3600944AE5 /* Assets.xcassets */,
@@ -143,6 +146,14 @@
 				BEF11334275E6EC500944AE5 /* ItemViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DDC2C2D42762BA790018B567 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DDC2C2D52762BA920018B567 /* SegueHandler.swift */,
+			);
+			path = protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 				BEF1131F2759BE4800944AE5 /* Chocolate.swift in Sources */,
 				BEF1131C2759B73B00944AE5 /* ItemViewController.swift in Sources */,
 				BEF11324275A6E3900944AE5 /* CurrrencyFormatter.swift in Sources */,
+				DDC2C2D62762BA920018B567 /* SegueHandler.swift in Sources */,
 				BEF1132F275D9C5800944AE5 /* LoginModel.swift in Sources */,
 				BEF1130627593C3200944AE5 /* AppDelegate.swift in Sources */,
 				BEF11337275FBAAE00944AE5 /* ShoppingCartViewController.swift in Sources */,
