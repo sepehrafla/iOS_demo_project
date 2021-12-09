@@ -8,6 +8,7 @@
 import UIKit
 
 class ChocolateCell: UITableViewCell {
+    static let Identifier = "ChocolateCell"
     var chocolateImageView = UIImageView()
     var chocolateTitle = UILabel()
     var chocolatePrice = UILabel()
