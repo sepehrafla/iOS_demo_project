@@ -9,5 +9,11 @@ import Foundation
 import RxSwift
 
 class ItemViewModel {
-// 
+    weak var coordinator: ItemCoordinator?
+    func login() {
+        coordinator?.navigateToCartScreen()
+    }
+}
+protocol ItemCoordinator: AnyObject {
+    func navigateToCartScreen()
 }

@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var navigation: UINavigationController?
+    let itemViewModel = ItemViewModel()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -22,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let loginViewModel = LoginViewModel()
         let loginVC = LoginViewController(loginViewModel: loginViewModel)
         navigation = UINavigationController(rootViewController: loginVC)
+        itemViewModel.coordinator = self
         loginViewModel.coordinator = self
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
@@ -61,8 +63,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate: LoginCoordinator {
     func navigateToItemScreen() {
-        let itemViewController = ItemViewController()
+        let itemViewController = ItemViewController(itemViewModel: itemViewModel)
         navigation?.pushViewController(itemViewController, animated: true)
     }
 }
+extension SceneDelegate: ItemCoordinator {
+    func navigateToCartScreen() {
+        print("itemcoordinator")
+        let cartViewController = ShoppingCartViewController()
+        navigation?.pushViewController(cartViewController, animated: true)
+    }
+}
+
 

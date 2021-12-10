@@ -28,6 +28,9 @@ final class LoginViewModel{
     func validateCredentials() -> Bool{
         return emailIdViewModel.validateCredentials() && passwordViewModel.validateCredentials();
     }
+    func authenticateuser () {
+        
+    }
     
     func loginUser(){
         

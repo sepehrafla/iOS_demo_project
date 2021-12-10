@@ -12,6 +12,14 @@ import RxCocoa
 
 class ItemViewController : UIViewController{
     
+    private let itemViewModel: ItemViewModel
+    init (itemViewModel: ItemViewModel){
+        self.itemViewModel = itemViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     var chocolates: [Chocolate] = []
     let cars = Observable.just(Chocolate.ofEurope)
     let disposeBag = DisposeBag()
@@ -41,8 +49,11 @@ class ItemViewController : UIViewController{
         setupCartObserver()
         setupCellConfiguration()
         setupCellTapHandling()
+        cartButton.addTarget(self, action: #selector(cartButtonPressed), for: .touchUpInside)
     }
-    
+    @objc func cartButtonPressed(){
+        itemViewModel.login()
+    }
     func setupview() {
         view.addSubview(titleLable)
         titleLable.snp.makeConstraints{make in
@@ -119,8 +130,8 @@ private extension ItemViewController {
 //    }
 //}
 
-extension ItemViewController: SegueHandler {
-  enum SegueIdentifier: String {
-    case goToCart
-  }
-}
+//extension ItemViewController: SegueHandler {
+//  enum SegueIdentifier: String {
+//    case goToCart
+//  }
+//}
