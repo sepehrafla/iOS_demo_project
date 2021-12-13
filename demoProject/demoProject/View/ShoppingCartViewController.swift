@@ -11,12 +11,23 @@ import RxSwift
 import RxCocoa
 
 class ShoppingCartViewController : UIViewController{
+    lazy var totalNamesLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: 24)
+        return label
+    }()
     lazy var totalItemsLabel: UILabel = {
         let label = UILabel()
         label.text = "Cars"
-        label.textColor = .red
+        label.textColor = .black
         label.font = .boldSystemFont(ofSize: 24)
-        label.textAlignment = .center
+        return label
+    }()
+    lazy var totalCostLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: 24)
         return label
     }()
     override func viewDidLoad() {
@@ -29,10 +40,25 @@ class ShoppingCartViewController : UIViewController{
        
     }
     func setupview() {
+        view.addSubview(totalNamesLabel)
+        totalNamesLabel.numberOfLines = 0
+        totalNamesLabel.snp.makeConstraints{make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(5)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(5)
+
+        }
+        
         view.addSubview(totalItemsLabel)
+        totalItemsLabel.numberOfLines = 0
         totalItemsLabel.snp.makeConstraints{make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(50)
-            make.centerX.equalToSuperview()
+            make.top.equalTo(totalNamesLabel)
+            make.leading.equalTo(totalNamesLabel.snp.trailing).offset(5)
+        }
+        view.addSubview(totalCostLabel)
+        totalCostLabel.numberOfLines = 0
+        totalCostLabel.snp.makeConstraints{make in
+            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(5)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
     }
 }
@@ -47,9 +73,8 @@ private extension ShoppingCartViewController {
     
     let cart = ShoppingCart.sharedCart
     totalItemsLabel.text = cart.itemCountString
-    
     let cost = cart.totalCost
-//    totalCostLabel.text = CurrencyFormatter.dollarsFormatter.string(from: cost)
+    totalCostLabel.text = CurrencyFormatter.dollarsFormatter.string(from: cost)
   }
 }
 

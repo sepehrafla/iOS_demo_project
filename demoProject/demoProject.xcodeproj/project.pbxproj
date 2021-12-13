@@ -17,10 +17,8 @@
 		BEF1131F2759BE4800944AE5 /* Chocolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1131E2759BE4800944AE5 /* Chocolate.swift */; };
 		BEF11324275A6E3900944AE5 /* CurrrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11323275A6E3900944AE5 /* CurrrencyFormatter.swift */; };
 		BEF11326275A6FF500944AE5 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11325275A6FF500944AE5 /* ShoppingCart.swift */; };
-		BEF11328275A826100944AE5 /* ChocolateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11327275A826100944AE5 /* ChocolateCell.swift */; };
+		BEF11328275A826100944AE5 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11327275A826100944AE5 /* CarCell.swift */; };
 		BEF1132F275D9C5800944AE5 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1132E275D9C5800944AE5 /* LoginModel.swift */; };
-		BEF11331275DA54B00944AE5 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11330275DA54B00944AE5 /* PasswordViewModel.swift */; };
-		BEF11333275DA55700944AE5 /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11332275DA55700944AE5 /* EmailViewModel.swift */; };
 		BEF11335275E6EC500944AE5 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11334275E6EC500944AE5 /* ItemViewModel.swift */; };
 		BEF11337275FBAAE00944AE5 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11336275FBAAE00944AE5 /* ShoppingCartViewController.swift */; };
 		D82C119CBC715622D78DC6ED /* Pods_demoProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B9271D143390C610C4BD9F /* Pods_demoProject.framework */; };
@@ -43,10 +41,8 @@
 		BEF1131E2759BE4800944AE5 /* Chocolate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chocolate.swift; sourceTree = "<group>"; };
 		BEF11323275A6E3900944AE5 /* CurrrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrrencyFormatter.swift; sourceTree = "<group>"; };
 		BEF11325275A6FF500944AE5 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
-		BEF11327275A826100944AE5 /* ChocolateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChocolateCell.swift; sourceTree = "<group>"; };
+		BEF11327275A826100944AE5 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		BEF1132E275D9C5800944AE5 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		BEF11330275DA54B00944AE5 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
-		BEF11332275DA55700944AE5 /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		BEF11334275E6EC500944AE5 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		BEF11336275FBAAE00944AE5 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		DDC2C2D72763E2DD0018B567 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
@@ -128,7 +124,7 @@
 		BEF11320275A6DE400944AE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BEF11327275A826100944AE5 /* ChocolateCell.swift */,
+				BEF11327275A826100944AE5 /* CarCell.swift */,
 				BEF1131B2759B73B00944AE5 /* ItemViewController.swift */,
 				BEF1130927593C3200944AE5 /* LoginViewController.swift */,
 				BEF11336275FBAAE00944AE5 /* ShoppingCartViewController.swift */,
@@ -140,8 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				BEF113192759B6C500944AE5 /* LoginViewModel.swift */,
-				BEF11330275DA54B00944AE5 /* PasswordViewModel.swift */,
-				BEF11332275DA55700944AE5 /* EmailViewModel.swift */,
 				BEF11334275E6EC500944AE5 /* ItemViewModel.swift */,
 				DDC2C2D72763E2DD0018B567 /* CartViewModel.swift */,
 			);
@@ -272,11 +266,9 @@
 				BEF1132F275D9C5800944AE5 /* LoginModel.swift in Sources */,
 				BEF1130627593C3200944AE5 /* AppDelegate.swift in Sources */,
 				BEF11337275FBAAE00944AE5 /* ShoppingCartViewController.swift in Sources */,
-				BEF11333275DA55700944AE5 /* EmailViewModel.swift in Sources */,
 				BEF1130827593C3200944AE5 /* SceneDelegate.swift in Sources */,
 				BEF11326275A6FF500944AE5 /* ShoppingCart.swift in Sources */,
-				BEF11328275A826100944AE5 /* ChocolateCell.swift in Sources */,
-				BEF11331275DA54B00944AE5 /* PasswordViewModel.swift in Sources */,
+				BEF11328275A826100944AE5 /* CarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

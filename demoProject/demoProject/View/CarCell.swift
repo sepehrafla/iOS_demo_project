@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ChocolateCell: UITableViewCell {
-    static let Identifier = "ChocolateCell"
+class CarCell: UITableViewCell {
+    static let Identifier = "CarCell"
     var chocolateImageView = UIImageView()
     var chocolateTitle = UILabel()
     var chocolatePrice = UILabel()

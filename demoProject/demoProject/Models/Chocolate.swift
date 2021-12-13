@@ -14,19 +14,19 @@ struct Chocolate: Equatable, Hashable {
   
   // An array of chocolate from europe
   static let ofEurope: [Chocolate] = {
-    let belgian = Chocolate(priceInDollars: 8,
+    let belgian = Chocolate(priceInDollars: 2000000,
                             countryName: "Buggati",
                             countryFlagEmoji: UIImage(named: "bugatti")!)
-    let british = Chocolate(priceInDollars: 7,
+    let british = Chocolate(priceInDollars: 100000,
                             countryName: "Tesla",
                             countryFlagEmoji: UIImage(named: "tesla")!)
-    let dutch = Chocolate(priceInDollars: 8,
+    let dutch = Chocolate(priceInDollars: 800000,
                           countryName: "McLaren",
                           countryFlagEmoji: UIImage(named: "mclaren")!)
-    let german = Chocolate(priceInDollars: 7,
+    let german = Chocolate(priceInDollars: 1200000,
                            countryName: "Lamborghini",
                            countryFlagEmoji: UIImage(named: "lambo")!)
-    let swiss = Chocolate(priceInDollars: 10,
+    let swiss = Chocolate(priceInDollars: 400000,
                           countryName: "Ferrari",
                           countryFlagEmoji: UIImage(named: "ferrari")!)
     

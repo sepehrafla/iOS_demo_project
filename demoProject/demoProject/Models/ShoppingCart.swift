@@ -25,7 +25,7 @@ extension ShoppingCart {
   
   var itemCountString: String {
     guard chocolates.value.count > 0 else {
-      return "🚫🏎️"
+      return "Cart is empty"
     }
     
     //Unique the chocolates
@@ -42,7 +42,7 @@ extension ShoppingCart {
         return runningTotal
       }
       
-      return "\(chocolate.countryFlagEmoji)🏎️ : \(count)"
+        return "\(chocolate.countryName) : \(count)"
     }
     
     return itemStrings.joined(separator: "\n")

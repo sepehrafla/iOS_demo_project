@@ -65,7 +65,7 @@ class ItemViewController : UIViewController{
 //        tableView.delegate = self
 //        tableView.dataSource = self
         tableView.rowHeight = 70
-        tableView.register(ChocolateCell.self, forCellReuseIdentifier: "ChocolateCell")
+        tableView.register(CarCell.self, forCellReuseIdentifier: "CarCell")
         tableView.snp.makeConstraints{make in
             make.top.equalTo(titleLable.snp.bottom).offset(5)
             make.leading.trailing.bottom.equalToSuperview().inset(5)
@@ -82,7 +82,7 @@ private extension ItemViewController {
   func setupCartObserver() {
     ShoppingCart.sharedCart.chocolates.asObservable()
       .subscribe(onNext: { [unowned self] chocolates in
-          self.cartButton.setTitle("\(chocolates.count) \u{1F3CE}", for: .normal)
+          self.cartButton.setTitle("\u{1F6D2} Cart(\(chocolates.count))", for: .normal)
           print(chocolates.count)
           self.cartButton.setTitleColor(.white, for: .normal)
       })
@@ -93,8 +93,8 @@ private extension ItemViewController {
     cars
       .bind(to: tableView
         .rx
-        .items(cellIdentifier: ChocolateCell.Identifier,
-               cellType: ChocolateCell.self)) { row, chocolate, cell in
+        .items(cellIdentifier: CarCell.Identifier,
+               cellType: CarCell.self)) { row, chocolate, cell in
                 cell.set(chocolate: chocolate)
       }
       .disposed(by: disposeBag)
