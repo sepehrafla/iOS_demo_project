@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import Pods_demoProject
 
 class ItemViewController : UIViewController{
     
@@ -32,13 +33,23 @@ class ItemViewController : UIViewController{
         label.textAlignment = .center
         return label
     }()
-    lazy var cartButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = .lightGray
-        button.layer.cornerRadius = 10
-        button.clipsToBounds = true
+    lazy var cartButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.title = "\u{1F6D2}"
+        button.style = .done
+        button.target = self
+        button.action = nil
         return button
     }()
+    lazy var logout: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.title = "Logout"
+        button.style = .done
+        button.target = self
+        button.action = nil
+        return button
+    }()
+
     lazy private var tableView = UITableView()
     
     override func viewDidLoad() {
@@ -49,7 +60,8 @@ class ItemViewController : UIViewController{
         setupCartObserver()
         setupCellConfiguration()
         setupCellTapHandling()
-        cartButton.addTarget(self, action: #selector(cartButtonPressed), for: .touchUpInside)
+//        cartButton.addTarget(self, action: #selector(cartButtonPressed), for: .touchUpInside)
+        cartButton.action = #selector(cartButtonPressed)
     }
     @objc func cartButtonPressed(){
         itemViewModel.login()
@@ -70,11 +82,11 @@ class ItemViewController : UIViewController{
             make.top.equalTo(titleLable.snp.bottom).offset(5)
             make.leading.trailing.bottom.equalToSuperview().inset(5)
         }
-        view.addSubview(cartButton)
-        cartButton.snp.makeConstraints{make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
-            make.left.right.equalToSuperview().inset(50)
-        }
+        self.navigationItem.rightBarButtonItem = cartButton
+//        cartButton.snp.makeConstraints{make in
+//            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
+//            make.left.right.equalToSuperview().inset(50)
+//        }
     }
 }
 
@@ -82,9 +94,8 @@ private extension ItemViewController {
   func setupCartObserver() {
     ShoppingCart.sharedCart.chocolates.asObservable()
       .subscribe(onNext: { [unowned self] chocolates in
-          self.cartButton.setTitle("\u{1F6D2} Cart(\(chocolates.count))", for: .normal)
+          self.cartButton.title = "\u{1F6D2} (\(chocolates.count))"
           print(chocolates.count)
-          self.cartButton.setTitleColor(.white, for: .normal)
       })
       .disposed(by: disposeBag)
   }
