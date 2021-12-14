@@ -62,9 +62,13 @@ class ItemViewController : UIViewController{
         setupCellTapHandling()
 //        cartButton.addTarget(self, action: #selector(cartButtonPressed), for: .touchUpInside)
         cartButton.action = #selector(cartButtonPressed)
+        logout.action =  #selector(gobacktoroot)
     }
     @objc func cartButtonPressed(){
         itemViewModel.login()
+    }
+    @objc func gobacktoroot () {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     func setupview() {
         view.addSubview(titleLable)
@@ -83,6 +87,7 @@ class ItemViewController : UIViewController{
             make.leading.trailing.bottom.equalToSuperview().inset(5)
         }
         self.navigationItem.rightBarButtonItem = cartButton
+        self.navigationItem.leftBarButtonItem = logout
 //        cartButton.snp.makeConstraints{make in
 //            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
 //            make.left.right.equalToSuperview().inset(50)
