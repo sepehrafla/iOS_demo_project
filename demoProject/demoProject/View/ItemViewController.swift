@@ -21,8 +21,8 @@ class ItemViewController : UIViewController{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    var chocolates: [Chocolate] = []
-    let cars = Observable.just(Chocolate.ofEurope)
+    var chocolates: [Car] = []
+    let cars = Observable.just(Car.ofEurope)
     let disposeBag = DisposeBag()
     
     private lazy var titleLable: UILabel = {
@@ -55,7 +55,7 @@ class ItemViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        chocolates = Chocolate.ofEurope
+        chocolates = Car.ofEurope
         setupview()
         setupCartObserver()
         setupCellConfiguration()
@@ -98,7 +98,7 @@ class ItemViewController : UIViewController{
 
 private extension ItemViewController {
   func setupCartObserver() {
-    ShoppingCart.sharedCart.chocolates.asObservable()
+    ShoppingCart.sharedCart.cars.asObservable()
       .subscribe(onNext: { [unowned self] chocolates in
           self.cartButton.title = "\u{1F6D2} (\(chocolates.count))"
           print(chocolates.count)
@@ -120,10 +120,10 @@ private extension ItemViewController {
   func setupCellTapHandling() {
     tableView
       .rx
-      .modelSelected(Chocolate.self)
+      .modelSelected(Car.self)
       .subscribe(onNext: { [unowned self] chocolate in
-        let newValue =  ShoppingCart.sharedCart.chocolates.value + [chocolate]
-        ShoppingCart.sharedCart.chocolates.accept(newValue)
+        let newValue =  ShoppingCart.sharedCart.cars.value + [chocolate]
+        ShoppingCart.sharedCart.cars.accept(newValue)
         
         if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
           self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
@@ -134,7 +134,7 @@ private extension ItemViewController {
 }
 extension ItemViewController {
   @IBAction func reset() {
-    ShoppingCart.sharedCart.chocolates.accept([])
+    ShoppingCart.sharedCart.cars.accept([])
     let _ = navigationController?.popViewController(animated: true)
   }
 }

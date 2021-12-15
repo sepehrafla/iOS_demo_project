@@ -49,7 +49,7 @@ class CarCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set (chocolate: Chocolate){
+    func set (chocolate: Car){
         chocolateImageView.image = chocolate.countryFlagEmoji
         chocolateTitle.text = chocolate.countryName
         chocolatePrice.text = chocolate.priceInDollars.description

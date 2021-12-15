@@ -77,7 +77,7 @@ class ShoppingCartViewController : UIViewController{
 }
 extension ShoppingCartViewController {
   @IBAction func reset() {
-    ShoppingCart.sharedCart.chocolates.accept([])
+    ShoppingCart.sharedCart.cars.accept([])
     let _ = navigationController?.popViewController(animated: true)
   }
 }

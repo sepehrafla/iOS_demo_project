@@ -11,38 +11,38 @@ import RxCocoa
 
 class ShoppingCart {
   static let sharedCart = ShoppingCart()
-  let chocolates: BehaviorRelay<[Chocolate]> = BehaviorRelay(value: [])
+  let cars: BehaviorRelay<[Car]> = BehaviorRelay(value: [])
 }
 
 //MARK: Non-Mutating Functions
 extension ShoppingCart {
   var totalCost: Float {
-    return chocolates.value.reduce(0) {
-      runningTotal, chocolate in
-      return runningTotal + chocolate.priceInDollars
+    return cars.value.reduce(0) {
+      runningTotal, car in
+      return runningTotal + car.priceInDollars
     }
   }
   
   var itemCountString: String {
-    guard chocolates.value.count > 0 else {
+    guard cars.value.count > 0 else {
       return "Cart is empty"
     }
     
     //Unique the chocolates
-    let setOfChocolates = Set<Chocolate>(chocolates.value)
+    let setOfCars = Set<Car>(cars.value)
     
     //Check how many of each exists
-    let itemStrings: [String] = setOfChocolates.map { chocolate in
-      let count: Int = chocolates.value.reduce(0) {
+    let itemStrings: [String] = setOfCars.map { car in
+      let count: Int = cars.value.reduce(0) {
         runningTotal, reduceChocolate in
-        if chocolate == reduceChocolate {
+        if car == reduceChocolate {
           return runningTotal + 1
         }
         
         return runningTotal
       }
       
-        return "\(chocolate.countryName) : \(count)"
+        return "\(car.countryName) : \(count)"
     }
     
     return itemStrings.joined(separator: "\n")
