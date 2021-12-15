@@ -30,6 +30,14 @@ class ShoppingCartViewController : UIViewController{
         label.font = .boldSystemFont(ofSize: 24)
         return label
     }()
+    lazy var cartButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.title = "Buy"
+        button.style = .done
+        button.target = self
+        button.action = nil
+        return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -37,9 +45,14 @@ class ShoppingCartViewController : UIViewController{
         // Do any additional setup after loading the view.
         setupview()
         configureFromCart()
+        cartButton.action = #selector(cartButtonPressed)
        
     }
+    @objc func cartButtonPressed(){
+        reset()
+    }
     func setupview() {
+        self.navigationItem.rightBarButtonItem = cartButton
         view.addSubview(totalNamesLabel)
         totalNamesLabel.numberOfLines = 0
         totalNamesLabel.snp.makeConstraints{make in

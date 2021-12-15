@@ -68,6 +68,7 @@ class ItemViewController : UIViewController{
         itemViewModel.login()
     }
     @objc func gobacktoroot () {
+        reset()
         self.navigationController?.popToRootViewController(animated: true)
     }
     func setupview() {
@@ -131,23 +132,11 @@ private extension ItemViewController {
       .disposed(by: disposeBag)
   }
 }
+extension ItemViewController {
+  @IBAction func reset() {
+    ShoppingCart.sharedCart.chocolates.accept([])
+    let _ = navigationController?.popViewController(animated: true)
+  }
+}
 
 
-//extension ItemViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return chocolates.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ChocolateCell") as! ChocolateCell
-//        let chocolate = chocolates[indexPath.row]
-//        cell.set(chocolate: chocolate)
-//        return cell
-//    }
-//}
-
-//extension ItemViewController: SegueHandler {
-//  enum SegueIdentifier: String {
-//    case goToCart
-//  }
-//}
