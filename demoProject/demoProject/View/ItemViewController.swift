@@ -68,7 +68,7 @@ class ItemViewController : UIViewController{
         itemViewModel.login()
     }
     @objc func gobacktoroot () {
-        reset()
+        ShoppingCart.sharedCart.cars.accept([])
         self.navigationController?.popToRootViewController(animated: true)
     }
     func setupview() {
