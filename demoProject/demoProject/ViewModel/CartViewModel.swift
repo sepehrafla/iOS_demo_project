@@ -13,8 +13,8 @@ class CartViewModel {
     let shoppingCart = ShoppingCart()
     var totalCost: Float {
         return shoppingCart.cars.value.reduce(0) {
-        runningTotal, chocolate in
-        return runningTotal + chocolate.priceInDollars
+        runningTotal, car in
+        return runningTotal + car.priceInDollars
       }
     }
     
@@ -24,20 +24,20 @@ class CartViewModel {
       }
       
       //Unique the chocolates
-        let setOfChocolates = Set<Car>(shoppingCart.cars.value)
+        let setOfCars = Set<Car>(shoppingCart.cars.value)
       
       //Check how many of each exists
-      let itemStrings: [String] = setOfChocolates.map { chocolate in
+      let itemStrings: [String] = setOfCars.map { car in
           let count: Int = shoppingCart.cars.value.reduce(0) {
           runningTotal, reduceChocolate in
-          if chocolate == reduceChocolate {
+          if car == reduceChocolate {
             return runningTotal + 1
           }
           
           return runningTotal
         }
         
-          return "\(chocolate.countryName) : \(count)"
+          return "\(car.countryName) : \(count)"
       }
       
       return itemStrings.joined(separator: "\n")

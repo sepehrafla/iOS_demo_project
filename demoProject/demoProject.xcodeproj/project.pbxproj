@@ -14,7 +14,7 @@
 		BEF1131227593C3600944AE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF1131027593C3600944AE5 /* LaunchScreen.storyboard */; };
 		BEF1131A2759B6C500944AE5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF113192759B6C500944AE5 /* LoginViewModel.swift */; };
 		BEF1131C2759B73B00944AE5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1131B2759B73B00944AE5 /* ItemViewController.swift */; };
-		BEF1131F2759BE4800944AE5 /* car.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1131E2759BE4800944AE5 /* car.swift */; };
+		BEF1131F2759BE4800944AE5 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1131E2759BE4800944AE5 /* Car.swift */; };
 		BEF11324275A6E3900944AE5 /* CurrrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11323275A6E3900944AE5 /* CurrrencyFormatter.swift */; };
 		BEF11326275A6FF500944AE5 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11325275A6FF500944AE5 /* ShoppingCart.swift */; };
 		BEF11328275A826100944AE5 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF11327275A826100944AE5 /* CarCell.swift */; };
@@ -38,7 +38,7 @@
 		BEF1131327593C3600944AE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEF113192759B6C500944AE5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BEF1131B2759B73B00944AE5 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		BEF1131E2759BE4800944AE5 /* car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = car.swift; sourceTree = "<group>"; };
+		BEF1131E2759BE4800944AE5 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		BEF11323275A6E3900944AE5 /* CurrrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrrencyFormatter.swift; sourceTree = "<group>"; };
 		BEF11325275A6FF500944AE5 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		BEF11327275A826100944AE5 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				BEF1132E275D9C5800944AE5 /* LoginModel.swift */,
-				BEF1131E2759BE4800944AE5 /* car.swift */,
+				BEF1131E2759BE4800944AE5 /* Car.swift */,
 				BEF11323275A6E3900944AE5 /* CurrrencyFormatter.swift */,
 				BEF11325275A6FF500944AE5 /* ShoppingCart.swift */,
 			);
@@ -259,7 +259,7 @@
 				BEF11335275E6EC500944AE5 /* ItemViewModel.swift in Sources */,
 				BEF1131A2759B6C500944AE5 /* LoginViewModel.swift in Sources */,
 				BEF1130A27593C3200944AE5 /* LoginViewController.swift in Sources */,
-				BEF1131F2759BE4800944AE5 /* car.swift in Sources */,
+				BEF1131F2759BE4800944AE5 /* Car.swift in Sources */,
 				DDC2C2D82763E2DD0018B567 /* CartViewModel.swift in Sources */,
 				BEF1131C2759B73B00944AE5 /* ItemViewController.swift in Sources */,
 				BEF11324275A6E3900944AE5 /* CurrrencyFormatter.swift in Sources */,

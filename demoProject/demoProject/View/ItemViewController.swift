@@ -89,10 +89,6 @@ class ItemViewController : UIViewController{
         }
         self.navigationItem.rightBarButtonItem = cartButton
         self.navigationItem.leftBarButtonItem = logout
-//        cartButton.snp.makeConstraints{make in
-//            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
-//            make.left.right.equalToSuperview().inset(50)
-//        }
     }
 }
 

@@ -27,21 +27,30 @@ final class LoginViewModel{
             alert.addAction(UIAlertAction(title: "Try again!", style: UIAlertAction.Style.default, handler: nil))
         }
     }
-//    let emailIdViewModel = "EmailViewModel()"
-//    let passwordViewModel = PasswordViewModel()
     
     // Fields that bind to our view's
     let isSuccess : Variable<Bool> = Variable(false)
     let isLoading : Variable<Bool> = Variable(false)
     let errorMsg : Variable<String> = Variable("")
-    
-//    func validateCredentials() -> Bool{
-//        return emailIdViewModel.validateCredentials() && passwordViewModel.validateCredentials();
-//    }
     func authenticateuser () {
         
     }
+}
+protocol LoginCoordinator: AnyObject {
+    func navigateToItemScreen()
+}
+
+protocol ValidationViewModel {
+     
+    var errorMessage: String { get }
     
+    // Observables
+    var data: Variable<String> { get set }
+    var errorValue: Variable<String?> { get }
+    
+    // Validation
+    func validateCredentials() -> Bool
+}
 //    func loginUser(){
 //
 //        // Initialise model with filed values
@@ -60,19 +69,3 @@ final class LoginViewModel{
 ////                self.errorMsg.value = error.message
 ////            }).disposed(by : disposebag)
 //    }
-}
-protocol LoginCoordinator: AnyObject {
-    func navigateToItemScreen()
-}
-
-protocol ValidationViewModel {
-     
-    var errorMessage: String { get }
-    
-    // Observables
-    var data: Variable<String> { get set }
-    var errorValue: Variable<String?> { get }
-    
-    // Validation
-    func validateCredentials() -> Bool
-}

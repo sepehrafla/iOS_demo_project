@@ -68,28 +68,7 @@ class LoginViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-//    func createViewModelBinding(){
-//            
-//        userNameField.rx.text.orEmpty
-//            .bind(to: loginViewModel.emailIdViewModel.data)
-//            .disposed(by: disposeBag)
-//        
-//        userPasswordField.rx.text.orEmpty
-//            .bind(to: loginViewModel.passwordViewModel.data)
-//            .disposed(by: disposeBag)
-//        
-//        loginButton.rx.tap.do(onNext:  { [unowned self] in
-//            self.userNameField.resignFirstResponder()
-//            self.userPasswordField.resignFirstResponder()
-//        }).subscribe(onNext: { [unowned self] in
-//            if self.loginViewModel.validateCredentials() {
-//                self.loginViewModel.loginUser()
-//            }
-//        }).disposed(by: disposeBag)
-//
-//    }
-//        
+        
     func createCallbacks (){
         
         // success
@@ -130,5 +109,27 @@ class LoginViewController: UIViewController {
             make.left.right.equalToSuperview().inset(50)
         }
     }
+    
+//    func createViewModelBinding(){
+//
+//        userNameField.rx.text.orEmpty
+//            .bind(to: loginViewModel.emailIdViewModel.data)
+//            .disposed(by: disposeBag)
+//
+//        userPasswordField.rx.text.orEmpty
+//            .bind(to: loginViewModel.passwordViewModel.data)
+//            .disposed(by: disposeBag)
+//
+//        loginButton.rx.tap.do(onNext:  { [unowned self] in
+//            self.userNameField.resignFirstResponder()
+//            self.userPasswordField.resignFirstResponder()
+//        }).subscribe(onNext: { [unowned self] in
+//            if self.loginViewModel.validateCredentials() {
+//                self.loginViewModel.loginUser()
+//            }
+//        }).disposed(by: disposeBag)
+//
+//    }
+//        
 }
 
