@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var navigation: UINavigationController?
     let itemViewModel = ItemViewModel()
+    let cartViewModel = CartViewModel()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -69,9 +70,14 @@ extension SceneDelegate: LoginCoordinator {
 }
 extension SceneDelegate: ItemCoordinator {
     func navigateToCartScreen() {
-        print("itemcoordinator")
-        let cartViewController = ShoppingCartViewController()
+        let cartViewController = ShoppingCartViewController(cartViewModel: cartViewModel)
         navigation?.pushViewController(cartViewController, animated: true)
+    }
+}
+extension SceneDelegate: FinishCoordinator {
+    func navigateToFinishScreen() {
+        let finishViewController = ThanksViewController()
+        navigation?.pushViewController(finishViewController, animated: true)
     }
 }
 

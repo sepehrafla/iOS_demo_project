@@ -11,6 +11,14 @@ import RxSwift
 import RxCocoa
 
 class ShoppingCartViewController : UIViewController{
+    private let cartViewModel: CartViewModel
+    init (cartViewModel: CartViewModel){
+        self.cartViewModel = cartViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     lazy var totalNamesLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -50,6 +58,7 @@ class ShoppingCartViewController : UIViewController{
     }
     @objc func cartButtonPressed(){
         reset()
+        cartViewModel.go()
     }
     func setupview() {
         self.navigationItem.rightBarButtonItem = cartButton
@@ -78,7 +87,8 @@ class ShoppingCartViewController : UIViewController{
 extension ShoppingCartViewController {
   @IBAction func reset() {
     ShoppingCart.sharedCart.cars.accept([])
-    let _ = navigationController?.popViewController(animated: true)
+    let finishViewController = ThanksViewController()
+    let _ = navigationController?.pushViewController(finishViewController, animated: true)
   }
 }
 private extension ShoppingCartViewController {

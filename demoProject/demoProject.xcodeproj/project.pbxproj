@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BED9412A276A49C600BC9254 /* ThanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED94129276A49C600BC9254 /* ThanksViewController.swift */; };
 		BEF1130627593C3200944AE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1130527593C3200944AE5 /* AppDelegate.swift */; };
 		BEF1130827593C3200944AE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1130727593C3200944AE5 /* SceneDelegate.swift */; };
 		BEF1130A27593C3200944AE5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1130927593C3200944AE5 /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 		4321469D5A63762F7C0AACCA /* Pods-demoProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoProject.debug.xcconfig"; path = "Target Support Files/Pods-demoProject/Pods-demoProject.debug.xcconfig"; sourceTree = "<group>"; };
 		B6B9271D143390C610C4BD9F /* Pods_demoProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC860C50ED302A1AD89E5534 /* Pods-demoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoProject.release.xcconfig"; path = "Target Support Files/Pods-demoProject/Pods-demoProject.release.xcconfig"; sourceTree = "<group>"; };
+		BED94129276A49C600BC9254 /* ThanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksViewController.swift; sourceTree = "<group>"; };
 		BEF1130227593C3200944AE5 /* demoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF1130527593C3200944AE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF1130727593C3200944AE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				BEF1130927593C3200944AE5 /* LoginViewController.swift */,
 				BEF1131B2759B73B00944AE5 /* ItemViewController.swift */,
 				BEF11336275FBAAE00944AE5 /* ShoppingCartViewController.swift */,
+				BED94129276A49C600BC9254 /* ThanksViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				BEF1130827593C3200944AE5 /* SceneDelegate.swift in Sources */,
 				BEF11326275A6FF500944AE5 /* ShoppingCart.swift in Sources */,
 				BEF11328275A826100944AE5 /* CarCell.swift in Sources */,
+				BED9412A276A49C600BC9254 /* ThanksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

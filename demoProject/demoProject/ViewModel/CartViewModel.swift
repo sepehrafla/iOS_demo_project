@@ -42,4 +42,11 @@ class CartViewModel {
       
       return itemStrings.joined(separator: "\n")
     }
+    weak var coordinator: FinishCoordinator?
+    func go() {
+        coordinator?.navigateToFinishScreen()
+    }
+}
+protocol FinishCoordinator: AnyObject {
+    func navigateToFinishScreen()
 }
