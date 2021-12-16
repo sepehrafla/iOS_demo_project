@@ -9,9 +9,9 @@ import UIKit
 
 class CarCell: UITableViewCell {
     static let Identifier = "CarCell"
-    var chocolateImageView = UIImageView()
-    var chocolateTitle = UILabel()
-    var chocolatePrice = UILabel()
+    var carImageView = UIImageView()
+    var carTitle = UILabel()
+    var carPrice = UILabel()
     
     override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -19,29 +19,29 @@ class CarCell: UITableViewCell {
     }
     
     func setupview () {
-        addSubview(chocolateImageView)
-        chocolateImageView.layer.cornerRadius = 10
-        chocolateImageView.clipsToBounds = true
-        chocolateImageView.snp.makeConstraints{make in
+        addSubview(carImageView)
+        carImageView.layer.cornerRadius = 10
+        carImageView.clipsToBounds = true
+        carImageView.snp.makeConstraints{make in
             make.top.equalTo(safeAreaLayoutGuide).offset(5)
             make.leading.equalTo(safeAreaLayoutGuide).offset(5)
             make.height.lessThanOrEqualTo(60)
             make.width.lessThanOrEqualTo(90)
         }
         
-        addSubview(chocolateTitle)
-        chocolateTitle.numberOfLines = 0
-        chocolateTitle.adjustsFontSizeToFitWidth = true
-        chocolateTitle.snp.makeConstraints{make in
-            make.top.equalTo(chocolateImageView)
-            make.leading.equalTo(chocolateImageView.snp.trailing).offset(5)
+        addSubview(carTitle)
+        carTitle.numberOfLines = 0
+        carTitle.adjustsFontSizeToFitWidth = true
+        carTitle.snp.makeConstraints{make in
+            make.top.equalTo(carImageView)
+            make.leading.equalTo(carImageView.snp.trailing).offset(5)
         }
 
-        addSubview(chocolatePrice)
-        chocolatePrice.numberOfLines = 0
-        chocolatePrice.adjustsFontSizeToFitWidth = true
-        chocolatePrice.snp.makeConstraints{make in
-            make.top.equalTo(chocolateTitle)
+        addSubview(carPrice)
+        carPrice.numberOfLines = 0
+        carPrice.adjustsFontSizeToFitWidth = true
+        carPrice.snp.makeConstraints{make in
+            make.top.equalTo(carTitle)
             make.trailing.equalTo(safeAreaLayoutGuide).inset(5)
         }
     }
@@ -50,9 +50,9 @@ class CarCell: UITableViewCell {
     }
     
     func set (chocolate: Car){
-        chocolateImageView.image = chocolate.countryFlagEmoji
-        chocolateTitle.text = chocolate.countryName
-        chocolatePrice.text = chocolate.priceInDollars.description
+        carImageView.image = chocolate.countryFlagEmoji
+        carTitle.text = chocolate.countryName
+        carPrice.text = chocolate.priceInDollars.description
     }
     
 }

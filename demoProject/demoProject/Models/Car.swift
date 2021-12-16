@@ -14,26 +14,26 @@ struct Car: Equatable, Hashable {
   
   // An array of chocolate from europe
   static let ofEurope: [Car] = {
-    let belgian = Car(priceInDollars: 2000000,
+    let buggati = Car(priceInDollars: 2000000,
                             countryName: "Buggati",
                             countryFlagEmoji: UIImage(named: "bugatti")!)
-    let british = Car(priceInDollars: 100000,
+    let tesla = Car(priceInDollars: 100000,
                             countryName: "Tesla",
                             countryFlagEmoji: UIImage(named: "tesla")!)
-    let dutch = Car(priceInDollars: 800000,
+    let mcLaren = Car(priceInDollars: 800000,
                           countryName: "McLaren",
                           countryFlagEmoji: UIImage(named: "mclaren")!)
-    let german = Car(priceInDollars: 1200000,
+    let lamborghini = Car(priceInDollars: 1200000,
                            countryName: "Lamborghini",
                            countryFlagEmoji: UIImage(named: "lambo")!)
-    let swiss = Car(priceInDollars: 400000,
+    let ferrari = Car(priceInDollars: 400000,
                           countryName: "Ferrari",
                           countryFlagEmoji: UIImage(named: "ferrari")!)
     
-    return [belgian,
-            british,
-            dutch,
-            german,
-            swiss]
+    return [buggati,
+            tesla,
+            mcLaren,
+            lamborghini,
+            ferrari]
   }()
 }
