@@ -23,14 +23,14 @@ class CartViewModel {
         return "Cart is empty"
       }
       
-      //Unique the chocolates
+      //Unique the cars
         let setOfCars = Set<Car>(shoppingCart.cars.value)
       
       //Check how many of each exists
       let itemStrings: [String] = setOfCars.map { car in
           let count: Int = shoppingCart.cars.value.reduce(0) {
-          runningTotal, reduceChocolate in
-          if car == reduceChocolate {
+          runningTotal, reduceCars in
+          if car == reduceCars {
             return runningTotal + 1
           }
           

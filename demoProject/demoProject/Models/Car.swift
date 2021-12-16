@@ -1,5 +1,5 @@
 //
-//  Chocolate.swift
+//  Car.swift
 //  demoProject
 //
 //  Created by Sepehr Aflatounian on 2021-12-02.
@@ -12,7 +12,7 @@ struct Car: Equatable, Hashable {
   let countryName: String
   let countryFlagEmoji: UIImage
   
-  // An array of chocolate from europe
+  // An array of cars from europe
   static let ofEurope: [Car] = {
     let buggati = Car(priceInDollars: 2000000,
                             countryName: "Buggati",

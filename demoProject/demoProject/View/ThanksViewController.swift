@@ -18,7 +18,7 @@ class ThanksViewController : UIViewController{
     }()
     lazy var mainButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
-        button.title = "Oder More"
+        button.title = "Order More"
         button.style = .done
         button.target = self
         button.action = nil

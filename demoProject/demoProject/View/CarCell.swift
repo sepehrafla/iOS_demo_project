@@ -1,5 +1,5 @@
 //
-//  ChocolateCell.swift
+//  CarCell.swift
 //  demoProject
 //
 //  Created by Sepehr Aflatounian on 2021-12-03.
@@ -49,10 +49,10 @@ class CarCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set (chocolate: Car){
-        carImageView.image = chocolate.countryFlagEmoji
-        carTitle.text = chocolate.countryName
-        carPrice.text = chocolate.priceInDollars.description
+    func set (car: Car){
+        carImageView.image = car.countryFlagEmoji
+        carTitle.text = car.countryName
+        carPrice.text = car.priceInDollars.description
     }
     
 }

@@ -28,7 +28,7 @@ extension ShoppingCart {
       return "Cart is empty"
     }
     
-    //Unique the chocolates
+    //Unique the cars
     let setOfCars = Set<Car>(cars.value)
     
     //Check how many of each exists

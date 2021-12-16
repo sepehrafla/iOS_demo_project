@@ -21,7 +21,7 @@ class ItemViewController : UIViewController{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    var chocolates: [Car] = []
+    var setOfCars: [Car] = []
     let cars = Observable.just(Car.ofEurope)
     let disposeBag = DisposeBag()
     
@@ -55,7 +55,7 @@ class ItemViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        chocolates = Car.ofEurope
+        setOfCars = Car.ofEurope
         setupview()
         setupCartObserver()
         setupCellConfiguration()
@@ -95,9 +95,9 @@ class ItemViewController : UIViewController{
 private extension ItemViewController {
   func setupCartObserver() {
     ShoppingCart.sharedCart.cars.asObservable()
-      .subscribe(onNext: { [unowned self] chocolates in
-          self.cartButton.title = "\u{1F6D2} (\(chocolates.count))"
-          print(chocolates.count)
+      .subscribe(onNext: { [unowned self] setOfCars in
+          self.cartButton.title = "\u{1F6D2} (\(setOfCars.count))"
+          print(setOfCars.count)
       })
       .disposed(by: disposeBag)
   }
@@ -107,8 +107,8 @@ private extension ItemViewController {
       .bind(to: tableView
         .rx
         .items(cellIdentifier: CarCell.Identifier,
-               cellType: CarCell.self)) { row, chocolate, cell in
-                cell.set(chocolate: chocolate)
+               cellType: CarCell.self)) { row, car, cell in
+                cell.set(car: car)
       }
       .disposed(by: disposeBag)
   }
@@ -117,8 +117,8 @@ private extension ItemViewController {
     tableView
       .rx
       .modelSelected(Car.self)
-      .subscribe(onNext: { [unowned self] chocolate in
-        let newValue =  ShoppingCart.sharedCart.cars.value + [chocolate]
+      .subscribe(onNext: { [unowned self] car in
+        let newValue =  ShoppingCart.sharedCart.cars.value + [car]
         ShoppingCart.sharedCart.cars.accept(newValue)
         
         if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
